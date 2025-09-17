@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本京都 - 古都風華與文化瑰寶</title>
+ <link rel="stylesheet" href="css/mystyle.css">
+    <style>
+        /* 基礎樣式設定 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* 導航列樣式 */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .logo-icon {
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            padding: 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #e74c3c;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        /* 主內容區域 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        /* 頁面標題 */
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/japn_kyoto.jpg?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            border-radius: 10px;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* 內容區塊 */
+        .content-section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #e74c3c;
+            display: inline-block;
+        }
+        
+        /* 歷史文化區塊 */
+        .history-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        .history-text {
+            line-height: 1.8;
+        }
+        
+        .history-text p {
+            margin-bottom: 1rem;
+        }
+        
+        .history-image {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 300px;
+        }
+        
+        .history-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* 景點卡片 */
+        .attractions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .attraction-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .attraction-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .attraction-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .attraction-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .attraction-card:hover .attraction-image img {
+            transform: scale(1.1);
+        }
+        
+        .attraction-content {
+            padding: 1.5rem;
+        }
+        
+        .attraction-content h3 {
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+        
+        .attraction-content p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        /* 旅遊時間區塊 */
+        .best-time {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+        
+        .season-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .season-card {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .season-card h4 {
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+        
+        .season-card p {
+            color: #666;
+        }
+        
+        .calendar {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .calendar h3 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .month {
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 5px;
+            width: 60px;
+        }
+        
+        .good {
+            background-color: #2ecc71;
+            color: white;
+        }
+        
+        .best {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .fair {
+            background-color: #f39c12;
+            color: white;
+        }
+        
+        /* 美食區塊 */
+        .foods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .food-card {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .food-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .food-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #e74c3c;
+        }
+        
+        .food-card h3 {
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+        
+        .food-card p {
+            color: #666;
+        }
+        
+        /* 交通指南 */
+        .transport-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        .transport-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .transport-method {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .transport-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+            color: #e74c3c;
+        }
+        
+        .transport-info h4 {
+            margin-bottom: 0.3rem;
+            color: #2c3e50;
+        }
+        
+        .transport-info p {
+            color: #666;
+        }
+        
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 300px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* 頁尾 */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a:hover {
+            color: #e74c3c;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+        
+        .social-icon:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        .copyright {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* 響應式設計 */
+        @media (max-width: 968px) {
+            .history-content,
+            .best-time,
+            .transport-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                display: none;
+                margin-top: 1rem;
+            }
+            
+            .nav-links.show {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+            
+            .hamburger {
+                display: block;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+            }
+            
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .season-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .page-header {
+                padding: 1.5rem;
+            }
+            
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 導航列 -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">✈</span>
+                <span>環遊世界</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="kyoto.html" class="active">日本京都</a></li>
+                <li><a href="rome.html">義大利羅馬</a></li>
+                <li><a href="machupicchu.html">秘魯馬丘比丘</a></li>
+                <li><a href="marrakech.html">摩洛哥馬拉喀什</a></li>
+            </ul>
+            
+            <div class="hamburger">☰</div>
+        </nav>
+    </header>
+
+    <!-- 主內容區域 -->
+    <main class="container">
+        <!-- 頁面標題 -->
+        <section class="page-header">
+            <h1 class="page-title">日本京都</h1>
+            <p class="page-subtitle">千年古都，傳統與現代的完美融合，擁有超過2000座寺廟和神社，展現日本傳統文化的精髓。</p>
+        </section>
+
+        <!-- 歷史文化 -->
+        <section class="content-section">
+            <h2 class="section-title">歷史與文化</h2>
+            <div class="history-content">
+                <div class="history-text">
+                    <p>京都自公元794年成為日本首都，直到1868年遷都東京，擁有超過千年的首都歷史。作為日本文化的心臟，京都保存了無數的傳統藝術、文化和建築。</p>
+                    <p>京都是日本傳統藝術的發源地，包括茶道、花道、能劇和歌舞伎等。城市中隨處可見的町家建築、美麗的庭園和古老的寺廟，展現了日本美學的精髓。</p>
+                    <p>京都一年四季都有豐富的傳統祭典，如祇園祭、時代祭和葵祭等，這些活動延續了數百年的傳統，讓遊客有機會體驗日本的古老文化。</p>
+                    <p>儘管現代化進程不斷推進，京都仍然完美地平衡了傳統與現代，既有高科技產業，又保留了古老的文化遺產，使其成為日本最受歡迎的旅遊目的地之一。</p>
+                </div>
+                <div class="history-image">
+                    <img src="https://images.unsplash.com/photo-1598797367116-810eb5720bed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="京都傳統建築">
+                </div>
+            </div>
+        </section>
+
+        <!-- 著名景點 -->
+        <section class="content-section">
+            <h2 class="section-title">著名景點</h2>
+            <div class="attractions">
+                <div class="attraction-card">
+                    <div class="attraction-image">
+                        <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="金閣寺">
+                    </div>
+                    <div class="attraction-content">
+                        <h3>金閣寺</h3>
+                        <p>正式名稱為鹿苑寺，是一座覆蓋金箔的禪寺，被聯合國教科文組織列為世界文化遺產。其倒映在鏡湖池中的金色身影是京都最具代表性的景象之一。</p>
+                    </div>
+                </div>
+                
+                <div class="attraction-card">
+                    <div class="attraction-image">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="清水寺">
+                    </div>
+                    <div class="attraction-content">
+                        <h3>清水寺</h3>
+                        <p>建於公元778年，是京都最古老的寺院之一。寺內的主堂有一座大型露台，由139根高大木柱支撐，懸空在懸崖上，可以俯瞰京都全景。</p>
+                    </div>
+                </div>
+                
+                <div class="attraction-card">
+                    <div class="attraction-image">
+                        <img src="https://images.unsplash.com/photo-1558118723-57c2c8b671e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="伏見稻荷大社">
+                    </div>
+                    <div class="attraction-content">
+                        <h3>伏見稻荷大社</h3>
+                        <p>以數千座鮮紅色鳥居門聞名於世，是日本全國約3萬座稻荷神社的總本社。這些鳥居形成了一條長達4公里的隧道，通往稻荷山頂。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 最佳旅遊時間 -->
+        <section class="content-section">
+            <h2 class="section-title">最佳旅遊時間</h2>
+            <div class="best-time">
+                <div class="season-cards">
+                    <div class="season-card">
+                        <h4>春季（3月-5月）</h4>
+                        <p>櫻花盛開的季節，京都各處公園和寺廟被粉色的櫻花覆蓋，是最受歡迎的旅遊季節。氣溫溫和，適合戶外活動。</p>
+                    </div>
+                    
+                    <div class="season-card">
+                        <h4>夏季（6月-8月）</h4>
+                        <p>夏季炎熱潮濕，但有很多傳統祭典，如祇園祭。建議參觀室內景點或山區避暑。</p>
+                    </div>
+                    
+                    <div class="season-card">
+                        <h4>秋季（9月-11月）</h4>
+                        <p>楓葉轉紅的季節，京都的庭園和山區變得五彩斑斕。天氣涼爽，是攝影愛好者的最佳時節。</p>
+                    </div>
+                    
+                    <div class="season-card">
+                        <h4>冬季（12月-2月）</h4>
+                        <p>冬季寒冷但遊客較少，可以體驗寧靜的寺廟和溫泉。偶爾下雪時，京都的景色格外美麗。</p>
+                    </div>
+                </div>
+                
+                <div class="calendar">
+                    <h3>旅遊最佳月份</h3>
+                    <div class="month best">3月</div>
+                    <div class="month best">4月</div>
+                    <div class="month good">5月</div>
+                    <div class="month fair">6月</div>
+                    <div class="month fair">7月</div>
+                    <div class="month fair">8月</div>
+                    <div class="month good">9月</div>
+                    <div class="month best">10月</div>
+                    <div class="month best">11月</div>
+                    <div class="month good">12月</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 當地美食 -->
+        <section class="content-section">
+            <h2 class="section-title">當地美食推薦</h2>
+            <div class="foods">
+                <div class="food-card">
+                    <div class="food-icon">🍣</div>
+                    <h3>京都壽司</h3>
+                    <p>京都風味的箱壽司和押壽司，使用當地食材和傳統製作方法，口味細膩精緻。</p>
+                </div>
+                
+                <div class="food-card">
+                    <div class="food-icon">🍜</div>
+                    <h3>湯豆腐</h3>
+                    <p>京都傳統料理，以優質水和黃豆製成的豆腐，口感細滑，通常配以清淡的湯汁食用。</p>
+                </div>
+                
+                <div class="food-card">
+                    <div class="food-icon">🍵</div>
+                    <h3>抹茶甜點</h3>
+                    <p>京都以其高品質抹茶聞名，各種抹茶冰淇淋、蛋糕和傳統和果子是不可錯過的美食。</p>
+                </div>
+                
+                <div class="food-card">
+                    <div class="food-icon">🍱</div>
+                    <h3>懷石料理</h3>
+                    <p>源自京都的精緻多道菜餐點，強調季節性和食材的原始風味，是日本飲食文化的極致表現。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 交通指南 -->
+        <section class="content-section">
+            <h2 class="section-title">交通指南</h2>
+            <div class="transport-content">
+                <div class="transport-methods">
+                    <div class="transport-method">
+                        <div class="transport-icon">✈</div>
+                        <div class="transport-info">
+                            <h4>飛機</h4>
+                            <p>從台灣飛往大阪關西國際機場（KIX），然後搭乘機場特快車Haruka號約75分鐘到達京都站。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="transport-method">
+                        <div class="transport-icon">🚄</div>
+                        <div class="transport-info">
+                            <h4>新幹線</h4>
+                            <p>從東京搭乘新幹線約2小時20分鐘可到達京都，是日本國內最便捷的交通方式。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="transport-method">
+                        <div class="transport-icon">🚇</div>
+                        <div class="transport-info">
+                            <h4>市內交通</h4>
+                            <p>京都擁有完善的地鐵和公交系統，購買一日乘車券可以無限次乘坐，是遊覽市內景點的最佳方式。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="transport-method">
+                        <div class="transport-icon">🚲</div>
+                        <div class="transport-info">
+                            <h4>自行車</h4>
+                            <p>京都市區相對平坦，租借自行車是探索這座城市的絕佳方式，可以更自由地穿梭於小巷和景點之間。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d417885.0473758445!2d135.438786892983!3d35.098388714563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6001a8d6cd3cc3f1%3A0xc0961d366bbb1d3d!2sKyoto%2C%20Japan!5e0!3m2!1sen!2sus!4v1645582571547!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 頁尾 -->
+    <footer>        
+        <div class="copyright">
+            <p>&copy; 2023 環遊世界旅遊資訊網. 版權所有</p>
+        </div>
+    </footer>
+
+    <script>
+        // 漢堡選單功能
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('show');
+        });
+
+        // 滾動效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(44, 62, 80, 0.95)';
+                header.style.padding = '0.5rem 2rem';
+            } else {
+                header.style.background = '#2c3e50';
+                header.style.padding = '1rem 2rem';
+            }
+        });
+
+        // 景點卡片動畫
+        const attractionCards = document.querySelectorAll('.attraction-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        attractionCards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

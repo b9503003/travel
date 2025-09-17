@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>環遊世界 - 探索全球最美目的地</title>
+    <link rel="stylesheet" href="css/mystyle.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <!-- 導航列 -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">✈</span>
+                <span>環遊世界</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="kyoto.html">日本京都</a></li>
+                <li><a href="rome.html">義大利羅馬</a></li>
+                <li><a href="machupicchu.html">秘魯馬丘比丘</a></li>
+                <li><a href="marrakech.html">摩洛哥馬拉喀什</a></li>
+            </ul>
+            
+            <div class="hamburger">☰</div>
+        </nav>
+    </header>
+
+    <!-- 主內容區域 -->
+    <main class="container">
+        <!-- 英雄區域輪播 -->
+        <section class="hero">
+            <div class="hero-slide active" style="background-image: url('img/japn_kyoto.jpg?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                <div class="slide-content">
+                    <h2>探索日本京都的古都魅力</h2>
+                    <p>千年古都，傳統與現代的完美融合</p>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('img/Italy_Roman.jpg?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                <div class="slide-content">
+                    <h2>體驗義大利羅馬的永恆之美</h2>
+                    <p>穿越時光，感受古羅馬帝國的輝煌</p>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('img/Peru_machupicchu.jpg?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                <div class="slide-content">
+                    <h2>探秘秘魯馬丘比丘的印加遺跡</h2>
+                    <p>雲端古城，世界新七大奇蹟之一</p>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('img/Marrakech.jpg?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                <div class="slide-content">
+                    <h2>沉浸摩洛哥馬拉喀什的異域風情</h2>
+                    <p>紅色之城，北非的珍珠</p>
+                </div>
+            </div>
+            
+            <div class="hero-controls">
+                <div class="hero-control active" data-index="0"></div>
+                <div class="hero-control" data-index="1"></div>
+                <div class="hero-control" data-index="2"></div>
+                <div class="hero-control" data-index="3"></div>
+            </div>
+        </section>
+
+        <!-- 精選目的地 -->
+        <section>
+            <h2 class="section-title">精選旅遊目的地</h2>
+            <div class="destinations">
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="img/japn_kyoto.jpg?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="日本京都">
+                    </div>
+                    <div class="card-content">
+                        <h3>日本京都</h3>
+                        <p>擁有超過2000座寺廟和神社，京都完美展現了日本傳統文化與現代生活的和諧共存。</p>
+                        <a href="kyoto.html" class="btn">探索更多</a>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="img/Italy_Roman.jpg?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="義大利羅馬">
+                    </div>
+                    <div class="card-content">
+                        <h3>義大利羅馬</h3>
+                        <p>永恆之城，擁有悠久的歷史和令人驚嘆的建築，從古羅馬遺址到文藝復興時期的藝術瑰寶。</p>
+                        <a href="rome.html" class="btn">探索更多</a>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="img/Peru_machupicchu.jpg?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="秘魯馬丘比丘">
+                    </div>
+                    <div class="card-content">
+                        <h3>秘魯馬丘比丘</h3>
+                        <p>印加帝國的神秘遺址，坐落在安第斯山脈之巔，被譽為"失落的城市"，是世界新七大奇蹟之一。</p>
+                        <a href="machupicchu.html" class="btn">探索更多</a>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="img/Marrakech.jpg?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="摩洛哥馬拉喀什">
+                    </div>
+                    <div class="card-content">
+                        <h3>摩洛哥馬拉喀什</h3>
+                        <p>被稱為"紅色之城"，擁有繁忙的露天市場、古老的宮殿和充滿異國情調的花園，是北非文化的瑰寶。</p>
+                        <a href="marrakech.html" class="btn">探索更多</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 網站特色 -->
+        <section>
+            <h2 class="section-title">為什麼選擇我們</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📚</div>
+                    <h3>詳盡的旅遊指南</h3>
+                    <p>提供最全面、最新的旅遊資訊，幫助您規劃完美旅程。</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🌍</div>
+                    <h3>全球目的地</h3>
+                    <p>探索世界各地的精彩景點，從熱門城市到隱藏寶石。</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">💡</div>
+                    <h3>實用旅行貼士</h3>
+                    <p>獲取當地知識、文化提示和省錢技巧，讓旅行更輕鬆。</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">📱</div>
+                    <h3>行動裝置友好</h3>
+                    <p>隨時隨地訪問我們的網站，即使在旅途中也能獲取所需資訊。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 新聞通訊 -->
+        <section class="newsletter">
+            <h2>訂閱我們的旅遊資訊</h2>
+            <p>獲取最新旅遊指南、獨家優惠和目的地靈感，直接發送到您的收件箱。</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="輸入您的電子郵件" required>
+                <button type="submit">訂閱</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- 頁尾 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>關於我們</h3>
+                <p>我們致力於提供最全面、最實用的旅遊資訊，幫助旅行者探索世界的每一個角落。</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>快速連結</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">首頁</a></li>
+                    <li><a href="kyoto.html">日本京都</a></li>
+                    <li><a href="rome.html">義大利羅馬</a></li>
+                    <li><a href="machupicchu.html">秘魯馬丘比丘</a></li>
+                    <li><a href="marrakech.html">摩洛哥馬拉喀什</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>聯繫我們</h3>
+                <p>電子郵件: info@globaltravel.com</p>
+                <p>電話: +852 1234 5678</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"></a>
+                    <a href="#" class="social-icon">t</a>
+                    <a href="#" class="social-icon">in</a>
+                    <a href="#" class="social-icon">ig</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 環遊世界旅遊資訊網. 版權所有</p>
+        </div>
+    </footer>
+<script src="js/myscript.js"></script>
+    <script>
+      
+    </script>
+</body>
+</html>
