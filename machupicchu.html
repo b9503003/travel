@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>秘魯馬丘比丘 - 印加帝國的失落之城</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">  <!-- 從W3Schools獲取的圖示 -->
+    <link rel="stylesheet" href="css/mystyle.css">
+        <style>
+
+        /* 頁面標題 */
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(rgba(2, 2, 2, 0.7), rgba(52, 52, 52, 0.7)), url('img/Peru_machupicchu.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            border-radius: 10px;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        
+        /* 徒步路線 */
+        .hiking-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        .hiking-routes {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .route-card {
+            padding: 1.5rem;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #27ae60;
+        }
+        
+        .route-card h4 {
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+        
+        .route-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .route-info span {
+            background-color: #e8f5e9;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .route-card p {
+            color: #666;
+        }
+        
+        
+        /* 預防高原反應*/
+        .altitude-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        .prevention-tips {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .tip-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .tip-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #27ae60;
+        }
+        
+        .tip-info h4 {
+            margin-bottom: 0.3rem;
+            color: #2c3e50;
+        }
+        
+        .tip-info p {
+            color: #666;
+        }
+        
+        .altitude-image {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 500px;
+        }
+        
+        .altitude-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- 導航列 -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">✈</span>
+                <span>環遊世界</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="kyoto.html">日本京都</a></li>
+                <li><a href="rome.html">義大利羅馬</a></li>
+                <li><a href="machupicchu.html" class="active">秘魯馬丘比丘</a></li>
+                <li><a href="marrakech.html">摩洛哥馬拉喀什</a></li>
+            </ul>
+            
+            <div class="hamburger">☰</div>
+        </nav>
+    </header>
+
+    <!-- 主內容區域 -->
+    <main class="container">
+        <!-- 頁面標題 -->
+        <section class="page-header">
+            <h1 class="page-title">秘魯馬丘比丘</h1>
+            <p class="page-subtitle">印加帝國的神秘遺址，坐落在安第斯山脈之巔，被譽為"失落的城市"是世界新七大奇蹟之一。</p>
+        </section>
+
+        <!-- 印加文明介紹 -->
+        <section class="content-section">
+            <h2 class="section-title">印加文明介紹</h2>
+            <div class="history-content">
+                <div class="history-text">
+                    <p>印加文明是南美洲最偉大的古代文明之一，從13世紀開始在安第斯山脈地區興起，並在15世紀建立了龐大的印加帝國，被稱為"塔萬廷蘇尤"（Tawantinsuyu），意為"四方之地"。</p>
+                    <p>印加帝國以其卓越的建築技術、精密的道路系統和先進的農業方法聞名。他們沒有使用文字系統，而是通過稱為"基普"（quipu）的繩結系統來記錄信息。</p>
+                    <p>印加社會有嚴格的等級制度，由薩帕·印卡（Sapa Inca）皇帝統治，被認為是太陽神因蒂的後代。帝國擁有複雜的行政體系和廣泛的道路網絡，連接了從現代厄瓜多到智中的廣大領土。</p>
+                    <p>印加人的宗教信仰以自然崇拜為中心，特別尊崇太陽神因蒂（Inti）、大地女神帕查瑪瑪（Pachamama）和創世神維拉科查（Viracocha）。他們建造了許多神廟和祭祀場所，馬丘比丘就是其中之一。</p>
+                </div>
+                <div class="history-image">
+                    <img src="img/machupicchu_1.jpg" alt="印加文明">
+                </div>
+            </div>
+        </section>
+
+        <!-- 馬丘比丘歷史與發現 -->
+        <section class="content-section">
+            <h2 class="section-title">馬丘比丘歷史與發現</h2>
+            <div class="history-content">
+                <div class="history-text">
+                    <p>馬丘比丘（Machu Picchu）意為"古老的山"，建於15世紀中葉印加帝國帕查庫特克（Pachacuti）皇帝時期。這座古城位於海拔2,430公尺的安第斯山脈上，俯瞰烏魯班巴河谷。</p>
+                    <p>關於馬丘比丘的真正用途至今仍有爭議，考古學家認為它可能是印加皇室的避暑勝地、宗教聖地或天文觀測站。其精確的建築布局與天文現象對齊，顯示印加人對天文學有深入理解。</p>
+                    <p>令人驚訝的是，西班牙征服者在16世紀征服印加帝國時並未發現馬丘比丘，使得這座古城得以完好保存。它在1911年由美國歷史學家海勒姆·賓厄姆（Hiram Bingham）重新發現，並在1913年登上《國家地理》雜誌封面後聞名世界。</p>
+                    <p>1983年，馬丘比丘被聯合國教科文組織列為世界遺產，2007年當選為世界新七大奇蹟之一。如今，它成為秘魯最受歡迎的旅遊景點，每年吸引數百萬遊客前往參觀。</p>
+                </div>
+                <div class="history-image">
+                    <img src="img/Peru_machupicchu.jpg" alt="馬丘比丘">
+                </div>
+            </div>
+        </section>
+
+        <!-- 徒步路線指南 -->
+        <section class="content-section">
+            <h2 class="section-title">徒步路線指南</h2>
+            <div class="hiking-content">
+                <div class="hiking-routes">
+                    <div class="route-card">
+                        <h4>印加古道</h4>
+                        <div class="route-info">
+                            <span>⏱ 4天/3夜</span>
+                            <span>🚶 43公里</span>
+                            <span>⭐⭐⭐ 困難</span>
+                        </div>
+                        <p>經典的印加古道是前往馬丘比丘最著名的徒步路線，需要提前數月預訂。沿途經過多個印加遺址、雲霧森林和高山通道，最終從太陽門進入馬丘比丘。</p>
+                    </div>
+                    
+                    <div class="route-card">
+                        <h4>薩爾坎泰路線</h4>
+                        <div class="route-info">
+                            <span>⏱ 5天/4夜</span>
+                            <span>🚶 50公里</span>
+                            <span>⭐⭐ 中等</span>
+                        </div>
+                        <p>這條路線比傳統印加古道更長但海拔較低，適合想要避開人群的徒步者。沿途風景壯麗，可以看到薩爾坎泰山和維爾卡諾塔山脈的壯觀景色。</p>
+                    </div>
+                    
+                    <div class="route-card">
+                        <h4>一日印加古道</h4>
+                        <div class="route-info">
+                            <span>⏱ 1天</span>
+                            <span>🚶 12公里</span>
+                            <span>⭐ 簡單</span>
+                        </div>
+                        <p>適合時間有限或不想多日徒步的旅客。從104公里處開始，徒步約6小時，經過Wiñay Wayna遺址，最後從太陽門進入馬丘比丘。</p>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15533.992951024413!2d-72.27578555760039!3d-13.256775057341043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x916dea6a244e69c9%3A0x4f062ca6dfb2da78!2zSW5jYSBUcmFpbCB0byBNYWNodSBQaWNjaHUsIOWlp-aPmuazsOWdpuWNmiAwODY3NuenmOmtrw!5e0!3m2!1szh-TW!2shk!4v1758281015784!5m2!1szh-TW!2shk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- 預防高原反應 -->
+        <section class="content-section">
+            <h2 class="section-title">預防高原反應</h2>
+            <div class="altitude-content">
+                <div class="prevention-tips">
+                    <div class="tip-item">
+                        <div class="tip-icon">⏳</div>
+                        <div class="tip-info">
+                            <h4>適應環境</h4>
+                            <p>抵達高海拔地區後，預留1-2天適應環境，避免劇烈活動，讓身體有時間適應氧氣稀薄的環境。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <div class="tip-icon">💧</div>
+                        <div class="tip-info">
+                            <h4>保持水分</h4>
+                            <p>高海拔地區空氣乾燥，容易脫水。每天至少飲用3-4升水，避免酒精和咖啡因，它們會加重脫水。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <div class="tip-icon">🍃</div>
+                        <div class="tip-info">
+                            <h4>古柯葉</h4>
+                            <p>咀嚼古柯葉或飲用古柯茶是安第斯山區傳統緩解高原反應的方法，可以幫助緩解症狀。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <div class="tip-icon">💊</div>
+                        <div class="tip-info">
+                            <h4>藥物預防</h4>
+                            <p>出發前諮詢醫生，考慮服用預防高原反應的藥物如乙酰唑胺（Diamox），並隨身攜帶止痛藥緩解頭痛。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <div class="tip-icon">🍽️</div>
+                        <div class="tip-info">
+                            <h4>飲食注意</h4>
+                            <p>吃輕便、高碳水化合物的食物，避免油膩難消化的食物。少食多餐有助於減輕身體負擔。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="altitude-image">
+                    <img src="img/machupicchu_2.jpg" alt="高原反應預防">
+                </div>
+            </div>
+        </section>
+
+        <!-- 周邊景點推薦 -->
+        <section class="content-section">
+            <h2 class="section-title">周邊景點推薦</h2>
+            <div class="attractions">
+                <div class="attraction-card">
+                    <div class="attraction-image">
+                        <img src="img/machupicchu_3.jpg" alt="庫斯科">
+                    </div>
+                    <div class="attraction-content">
+                        <h3>庫斯科古城</h3>
+                        <p>古印加帝國的首都，現在是前往馬丘比丘的主要門戶。城市融合了印加和西班牙殖民建築，擁有豐富的歷史和文化遺產。</p>
+                    </div>
+                </div>
+                
+                <div class="attraction-card">
+                    <div class="attraction-image">
+                        <img src="img/machupicchu_4.jpg" alt="聖谷">
+                    </div>
+                    <div class="attraction-content">
+                        <h3>聖谷</h3>
+                        <p>烏魯班巴河谷的別稱，擁有肥沃的土地和眾多印加遺址，包括皮薩克和奧揚泰坦博。風景優美，是適應海拔的好地方。</p>
+                    </div>
+                </div>
+                
+                <div class="attraction-card">
+                    <div class="attraction-image">
+                        <img src="img/machupicchu_5.jpg" alt="彩虹山">
+                    </div>
+                    <div class="attraction-content">
+                        <h3>彩虹山</h3>
+                        <p>近年來流行的自然奇觀，因礦物質形成的七彩條紋而聞名。海拔5,200公尺，需要良好的體力和高原適應能力。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 頁尾 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>關於我們</h3>
+                <p>&#129517我們的團隊由資深旅行作家、當地嚮導和文化專家組成，親自探訪每個目的地，確保資訊的準確性和時效性。我們相信旅行不僅是看風景，更是心靈的成長與文化的交流，因此我們特別注重深度文化體驗和可持續旅遊的推廣，讓您的每一次出行都充滿意義且留下難忘回憶。</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>快速連結</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">首頁</a></li>
+                    <li><a href="#">旅遊資訊</a></li>
+                    <li><a href="#">發掘景點</a></li>
+                    <li><a href="#">實用貼士</a></li>
+                    <li><a href="#">點讚評論</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>聯繫我們</h3>
+                <p>電子郵件: info@globaltravel.com</p>
+                <p>電話: +852 1234 5678</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">f</a>
+                    <a href="#" class="social-icon">t</a>
+                    <a href="#" class="social-icon">in</a>
+                    <a href="#" class="social-icon">ig</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 環遊世界旅遊資訊網. 版權所有</p>
+        </div>
+    </footer>
+<script src="js/myscript.js"></script>
+
+    <script>
+
+        
+    </script>
+</body>
+</html>

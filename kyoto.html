@@ -4,95 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>日本京都 - 古都風華與文化瑰寶</title>
- <link rel="stylesheet" href="css/mystyle.css">
+<link rel="icon" type="image/x-icon" href="img/favicon.ico">  <!-- 從W3Schools獲取的圖示 -->
+<link rel="stylesheet" href="css/mystyle.css">
     <style>
-        /* 基礎樣式設定 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        /* 導航列樣式 */
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
-        .logo-icon {
-            margin-right: 10px;
-            font-size: 1.8rem;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 1.5rem;
-        }
-        
-        .nav-links a {
-            padding: 0.5rem;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: #e74c3c;
-        }
-        
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-        }
-        
-        /* 主內容區域 */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+
         
         /* 頁面標題 */
         .page-header {
             text-align: center;
             margin-bottom: 3rem;
             padding: 2rem;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/japn_kyoto.jpg?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgb(6, 0, 0), rgba(77, 0, 0, 0.7)), url('img/japn_kyoto.jpg');
             background-size: cover;
             background-position: center;
             color: white;
@@ -109,100 +31,7 @@
             max-width: 800px;
             margin: 0 auto;
         }
-        
-        /* 內容區塊 */
-        .content-section {
-            background-color: white;
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .section-title {
-            color: #2c3e50;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid #e74c3c;
-            display: inline-block;
-        }
-        
-        /* 歷史文化區塊 */
-        .history-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-        
-        .history-text {
-            line-height: 1.8;
-        }
-        
-        .history-text p {
-            margin-bottom: 1rem;
-        }
-        
-        .history-image {
-            border-radius: 10px;
-            overflow: hidden;
-            height: 300px;
-        }
-        
-        .history-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        /* 景點卡片 */
-        .attractions {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .attraction-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .attraction-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-        
-        .attraction-image {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .attraction-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .attraction-card:hover .attraction-image img {
-            transform: scale(1.1);
-        }
-        
-        .attraction-content {
-            padding: 1.5rem;
-        }
-        
-        .attraction-content h3 {
-            margin-bottom: 0.5rem;
-            color: #2c3e50;
-        }
-        
-        .attraction-content p {
-            margin-bottom: 1rem;
-            color: #666;
-        }
+
         
         /* 旅遊時間區塊 */
         .best-time {
@@ -250,7 +79,7 @@
             margin: 0.5rem;
             padding: 0.5rem;
             border-radius: 5px;
-            width: 60px;
+            width: 80px;
         }
         
         .good {
@@ -263,219 +92,14 @@
             color: white;
         }
         
+        
         .fair {
             background-color: #f39c12;
             color: white;
         }
         
-        /* 美食區塊 */
-        .foods {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        
-        .food-card {
-            text-align: center;
-            padding: 1.5rem;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-        
-        .food-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .food-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #e74c3c;
-        }
-        
-        .food-card h3 {
-            margin-bottom: 0.5rem;
-            color: #2c3e50;
-        }
-        
-        .food-card p {
-            color: #666;
-        }
-        
-        /* 交通指南 */
-        .transport-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-        
-        .transport-methods {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        
-        .transport-method {
-            display: flex;
-            align-items: center;
-            padding: 1rem;
-            background-color: #f8f9fa;
-            border-radius: 10px;
-        }
-        
-        .transport-icon {
-            font-size: 2rem;
-            margin-right: 1rem;
-            color: #e74c3c;
-        }
-        
-        .transport-info h4 {
-            margin-bottom: 0.3rem;
-            color: #2c3e50;
-        }
-        
-        .transport-info p {
-            color: #666;
-        }
-        
-        .map-container {
-            border-radius: 10px;
-            overflow: hidden;
-            height: 300px;
-        }
-        
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        /* 頁尾 */
-        footer {
-            background-color: #2c3e50;
-            color: white;
-            padding: 2rem;
-            text-align: center;
-            margin-top: 3rem;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            text-align: left;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-section h3 {
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .footer-links a:hover {
-            color: #e74c3c;
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: rgba(255,255,255,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s;
-        }
-        
-        .social-icon:hover {
-            background-color: rgba(255,255,255,0.2);
-        }
-        
-        .copyright {
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        /* 響應式設計 */
-        @media (max-width: 968px) {
-            .history-content,
-            .best-time,
-            .transport-content {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .nav-links {
-                flex-direction: column;
-                width: 100%;
-                display: none;
-                margin-top: 1rem;
-            }
-            
-            .nav-links.show {
-                display: flex;
-            }
-            
-            .nav-links li {
-                margin: 0.5rem 0;
-            }
-            
-            .hamburger {
-                display: block;
-                position: absolute;
-                top: 1rem;
-                right: 1rem;
-            }
-            
-            .page-title {
-                font-size: 2rem;
-            }
-            
-            .season-cards {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .container {
-                padding: 1rem;
-            }
-            
-            .page-header {
-                padding: 1.5rem;
-            }
-            
-            .page-title {
-                font-size: 1.8rem;
-            }
-            
-            .section-title {
-                font-size: 1.5rem;
-            }
-        }
+ 
+
     </style>
 </head>
 <body>
@@ -518,7 +142,7 @@
                     <p>儘管現代化進程不斷推進，京都仍然完美地平衡了傳統與現代，既有高科技產業，又保留了古老的文化遺產，使其成為日本最受歡迎的旅遊目的地之一。</p>
                 </div>
                 <div class="history-image">
-                    <img src="https://images.unsplash.com/photo-1598797367116-810eb5720bed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="京都傳統建築">
+                    <img src="img/japn_kyoto.jpg" alt="京都傳統建築">
                 </div>
             </div>
         </section>
@@ -529,17 +153,17 @@
             <div class="attractions">
                 <div class="attraction-card">
                     <div class="attraction-image">
-                        <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="金閣寺">
+                        <img src="img/kyoto-gion.jpg" alt="花見小路">
                     </div>
                     <div class="attraction-content">
-                        <h3>金閣寺</h3>
-                        <p>正式名稱為鹿苑寺，是一座覆蓋金箔的禪寺，被聯合國教科文組織列為世界文化遺產。其倒映在鏡湖池中的金色身影是京都最具代表性的景象之一。</p>
+                        <h3>花見小路</h3>
+                        <p>以其傳統的茶屋、料理亭和藝伎文化聞名，是體驗京都傳統風情的必訪之地。長約1公里的街道從北至南貫穿祇園，尤其在四條通以南的區域，保留了許多江戶時代以來的古老風貌。</p>
                     </div>
                 </div>
                 
                 <div class="attraction-card">
                     <div class="attraction-image">
-                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="清水寺">
+                        <img src="img/kyoto_2.jpg" alt="清水寺">
                     </div>
                     <div class="attraction-content">
                         <h3>清水寺</h3>
@@ -549,7 +173,7 @@
                 
                 <div class="attraction-card">
                     <div class="attraction-image">
-                        <img src="https://images.unsplash.com/photo-1558118723-57c2c8b671e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="伏見稻荷大社">
+                        <img src="img/kyoto_3.jpg" alt="伏見稻荷大社">
                     </div>
                     <div class="attraction-content">
                         <h3>伏見稻荷大社</h3>
@@ -587,16 +211,15 @@
                 
                 <div class="calendar">
                     <h3>旅遊最佳月份</h3>
-                    <div class="month best">3月</div>
-                    <div class="month best">4月</div>
+                    <div class="month best">&#127775;3月</div>
+                    <div class="month best">&#127775;4月</div>
                     <div class="month good">5月</div>
                     <div class="month fair">6月</div>
                     <div class="month fair">7月</div>
                     <div class="month fair">8月</div>
                     <div class="month good">9月</div>
-                    <div class="month best">10月</div>
-                    <div class="month best">11月</div>
-                    <div class="month good">12月</div>
+                    <div class="month best">&#127775;10月</div>
+                    <div class="month best">&#127775;11月</div>
                 </div>
             </div>
         </section>
@@ -605,11 +228,6 @@
         <section class="content-section">
             <h2 class="section-title">當地美食推薦</h2>
             <div class="foods">
-                <div class="food-card">
-                    <div class="food-icon">🍣</div>
-                    <h3>京都壽司</h3>
-                    <p>京都風味的箱壽司和押壽司，使用當地食材和傳統製作方法，口味細膩精緻。</p>
-                </div>
                 
                 <div class="food-card">
                     <div class="food-icon">🍜</div>
@@ -634,39 +252,33 @@
         <!-- 交通指南 -->
         <section class="content-section">
             <h2 class="section-title">交通指南</h2>
-            <div class="transport-content">
-                <div class="transport-methods">
-                    <div class="transport-method">
-                        <div class="transport-icon">✈</div>
-                        <div class="transport-info">
+            <div class="tips-content">
+                <div class="tips-list">
+                    <div class="tip-item">
+                        <div class="tip-icon">✈</div>
+                        <div class="tip-info">
                             <h4>飛機</h4>
-                            <p>從台灣飛往大阪關西國際機場（KIX），然後搭乘機場特快車Haruka號約75分鐘到達京都站。</p>
+                            <p>飛往大阪關西國際機場（KIX），然後搭乘機場特快車Haruka號約75分鐘到達京都站。</p>
                         </div>
                     </div>
-                    
-                    <div class="transport-method">
-                        <div class="transport-icon">🚄</div>
-                        <div class="transport-info">
+
+                    <div class="tip-item">
+                        <div class="tip-icon">🚄</div>
+                        <div class="tip-info">
                             <h4>新幹線</h4>
                             <p>從東京搭乘新幹線約2小時20分鐘可到達京都，是日本國內最便捷的交通方式。</p>
                         </div>
                     </div>
                     
-                    <div class="transport-method">
-                        <div class="transport-icon">🚇</div>
-                        <div class="transport-info">
+                    <div class="tip-item">
+                        <div class="tip-icon">🚇</div>
+                        <div class="tip-info">
                             <h4>市內交通</h4>
                             <p>京都擁有完善的地鐵和公交系統，購買一日乘車券可以無限次乘坐，是遊覽市內景點的最佳方式。</p>
                         </div>
                     </div>
                     
-                    <div class="transport-method">
-                        <div class="transport-icon">🚲</div>
-                        <div class="transport-info">
-                            <h4>自行車</h4>
-                            <p>京都市區相對平坦，租借自行車是探索這座城市的絕佳方式，可以更自由地穿梭於小巷和景點之間。</p>
-                        </div>
-                    </div>
+
                 </div>
                 
                 <div class="map-container">
@@ -677,47 +289,45 @@
     </main>
 
     <!-- 頁尾 -->
-    <footer>        
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>關於我們</h3>
+                <p>&#129517我們的團隊由資深旅行作家、當地嚮導和文化專家組成，親自探訪每個目的地，確保資訊的準確性和時效性。我們相信旅行不僅是看風景，更是心靈的成長與文化的交流，因此我們特別注重深度文化體驗和可持續旅遊的推廣，讓您的每一次出行都充滿意義且留下難忘回憶。</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>快速連結</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">首頁</a></li>
+                    <li><a href="#">旅遊資訊</a></li>
+                    <li><a href="#">發掘景點</a></li>
+                    <li><a href="#">實用貼士</a></li>
+                    <li><a href="#">點讚評論</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>聯繫我們</h3>
+                <p>電子郵件: info@globaltravel.com</p>
+                <p>電話: +852 1234 5678</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">f</a>
+                    <a href="#" class="social-icon">t</a>
+                    <a href="#" class="social-icon">in</a>
+                    <a href="#" class="social-icon">ig</a>
+                </div>
+            </div>
+        </div>
+        
         <div class="copyright">
-            <p>&copy; 2023 環遊世界旅遊資訊網. 版權所有</p>
+            <p>&copy; 2025 環遊世界旅遊資訊網. 版權所有</p>
         </div>
     </footer>
+<script src="js/myscript.js"></script>
 
     <script>
-        // 漢堡選單功能
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('show');
-        });
 
-        // 滾動效果
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(44, 62, 80, 0.95)';
-                header.style.padding = '0.5rem 2rem';
-            } else {
-                header.style.background = '#2c3e50';
-                header.style.padding = '1rem 2rem';
-            }
-        });
-
-        // 景點卡片動畫
-        const attractionCards = document.querySelectorAll('.attraction-card');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-
-        attractionCards.forEach(card => {
-            card.style.opacity = 0;
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            observer.observe(card);
-        });
     </script>
 </body>
 </html>
