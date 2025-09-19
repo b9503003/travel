@@ -75,42 +75,7 @@
         }
         
         
-        /* 預防高原反應*/
-        .altitude-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-        
-        .prevention-tips {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        
-        .tip-item {
-            display: flex;
-            align-items: flex-start;
-            padding: 1rem;
-            background-color: #f8f9fa;
-            border-radius: 10px;
-        }
-        
-        .tip-icon {
-            font-size: 1.5rem;
-            margin-right: 1rem;
-            color: #27ae60;
-        }
-        
-        .tip-info h4 {
-            margin-bottom: 0.3rem;
-            color: #2c3e50;
-        }
-        
-        .tip-info p {
-            color: #666;
-        }
-        
+        /* 預防高原反應*/ 
         .altitude-image {
             border-radius: 10px;
             overflow: hidden;
@@ -123,6 +88,71 @@
             object-fit: cover;
         }
         
+        /* 響應式設計 */
+        @media (max-width: 968px) {
+            .inca-content,
+            .history-content,
+            .hiking-content,
+            .tips-content  {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                display: none;
+                margin-top: 1rem;
+            }
+            
+            .nav-links.show {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+            
+            .hamburger {
+                display: block;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+            }
+            
+            .page-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .page-header {
+                padding: 1.5rem;
+            }
+            
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .route-info {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -231,8 +261,8 @@
         <!-- 預防高原反應 -->
         <section class="content-section">
             <h2 class="section-title">預防高原反應</h2>
-            <div class="altitude-content">
-                <div class="prevention-tips">
+            <div class="tips-content">
+                <div class="tips-list">
                     <div class="tip-item">
                         <div class="tip-icon">⏳</div>
                         <div class="tip-info">
