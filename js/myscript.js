@@ -41,14 +41,35 @@
             slideInterval = setInterval(nextSlide, 5000);
         }
 
-        // 初始化
-        showSlide(0);
-        startSlideShow();
-
-        // 表單提交處理
-        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('input').value;
-            alert(`感謝您的訂閱！我們將發送最新旅遊資訊至: ${email}`);
-            this.querySelector('input').value = '';
+        // 滾動效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(44, 62, 80, 0.95)';
+                header.style.padding = '0.5rem 2rem';
+            } else {
+                header.style.background = '#2c3e50';
+                header.style.padding = '1rem 2rem';
+            }
         });
+
+        // 景點卡片動畫
+        const attractionCards = document.querySelectorAll('.attraction-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        attractionCards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+
+
+
