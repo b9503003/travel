@@ -6,6 +6,7 @@
     <title>秘魯馬丘比丘 - 印加帝國的失落之城</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">  <!-- 從W3Schools獲取的圖示 -->
     <link rel="stylesheet" href="css/mystyle.css">
+    <link rel="stylesheet" href="css/responsive.css">
         <style>
 
         /* 頁面標題 */
@@ -90,7 +91,6 @@
         
         /* 響應式設計 */
         @media (max-width: 968px) {
-            .inca-content,
             .history-content,
             .hiking-content,
             .tips-content  {
@@ -98,61 +98,7 @@
             }
         }
         
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .nav-links {
-                flex-direction: column;
-                width: 100%;
-                display: none;
-                margin-top: 1rem;
-            }
-            
-            .nav-links.show {
-                display: flex;
-            }
-            
-            .nav-links li {
-                margin: 0.5rem 0;
-            }
-            
-            .hamburger {
-                display: block;
-                position: absolute;
-                top: 1rem;
-                right: 1rem;
-            }
-            
-            .page-title {
-                font-size: 2rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .container {
-                padding: 1rem;
-            }
-            
-            .page-header {
-                padding: 1.5rem;
-            }
-            
-            .page-title {
-                font-size: 1.8rem;
-            }
-            
-            .section-title {
-                font-size: 1.5rem;
-            }
-            
-            .route-info {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-        }
+
     </style>
 </head>
 <body>
@@ -362,7 +308,7 @@
                     <li><a href="#">旅遊資訊</a></li>
                     <li><a href="#">發掘景點</a></li>
                     <li><a href="#">實用貼士</a></li>
-                    <li><a href="#">點讚評論</a></li>
+                    <li><a href="#">點讚留言</a></li>
                 </ul>
             </div>
             
@@ -380,7 +326,7 @@
         </div>
         
         <div class="copyright">
-            <p>&copy; 2025 環遊世界旅遊資訊網. 版權所有</p>
+            <p>&copy; 2025 陳日東旅遊資訊網. 版權所有</p>
         </div>
     </footer>
 <script src="js/myscript.js"></script>
