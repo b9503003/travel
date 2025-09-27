@@ -215,6 +215,7 @@ button {
 .header_section {
     width: 100%;
     float: left;
+    font-size: 36px;
     height: auto;
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -319,16 +320,16 @@ button {
 
 .banner_taital {
     width: 100%;
-    font-size: 80px;
+    font-size: 40px;
     color: #fefefd;
-    font-weight: 800;
-    line-height: 90px;
+    font-weight: 400;
+    line-height: auto;
 }
 
 .banner_text {
     width: 100%;
     float: left;
-    font-size: 16px;
+    font-size: 24px;
     color: #fefefd;
     margin: 20px 0px 0px 0px;
 }
@@ -1076,4 +1077,5 @@ textarea#comment.update_mail::placeholder {
 
 .margin_top90 {
     margin-top: 90px;
+
 }
