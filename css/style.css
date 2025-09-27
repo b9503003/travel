@@ -215,7 +215,6 @@ button {
 .header_section {
     width: 100%;
     float: left;
-    font-size: 36px;
     height: auto;
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -265,6 +264,7 @@ button {
 .navbar-brand {
     margin: 0px;
     float: right;
+    font-size: 200%;
 }
 
 .navbar {
@@ -320,7 +320,7 @@ button {
 
 .banner_taital {
     width: 100%;
-    font-size: 40px;
+    font-size: 60px;
     color: #fefefd;
     font-weight: 400;
     line-height: auto;
@@ -329,7 +329,7 @@ button {
 .banner_text {
     width: 100%;
     float: left;
-    font-size: 24px;
+    font-size: 20px;
     color: #fefefd;
     margin: 20px 0px 0px 0px;
 }
@@ -1079,3 +1079,4 @@ textarea#comment.update_mail::placeholder {
     margin-top: 90px;
 
 }
+
