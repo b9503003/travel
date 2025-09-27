@@ -513,7 +513,9 @@ button {
 
 .coffee_section {
     width: 100%;
+    height: 500px;
     float: left;
+    
 }
 
 .coffee_taital {
@@ -1079,4 +1081,5 @@ textarea#comment.update_mail::placeholder {
     margin-top: 90px;
 
 }
+
 
