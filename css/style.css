@@ -310,7 +310,7 @@ button {
 .banner_section {
     width: 100%;
     float: left;
-    padding: 90px 0px 140px 0px;
+    padding: 50px 0px 50px 0px;
 }
 
 .banner_taital_main {
@@ -336,40 +336,12 @@ button {
 
 .btn_main {
     width: 100%;
-    float: left;
-    padding-top: 40px;
-}
-
-.about_bt {
-    width: 175px;
-    float: left;
-}
-
-.about_bt a {
-    width: 100%;
-    float: left;
-    font-size: 18px;
-    background-color: #fefefd;
-    color: #1c130f;
-    text-align: center;
-    padding: 10px;
-    border-radius: 5px;
-    text-transform: uppercase;
-}
-
-.about_bt a:hover {
-    color: #fefefd;
-    background-color: #f01c1c;
-}
-
-
-.about_bt.active a {
-    color: #fefefd;
-    background-color: #f01c1c;
+    float: center;
+    padding-top: 20px;
 }
 
 .callnow_bt {
-    width: 175px;
+    width: 200px;
     float: left;
 }
 
@@ -515,7 +487,7 @@ button {
     width: 100%;
     float: left;
     
-}
+} 
 
 .coffee_taital {
     width: 100%;
@@ -546,9 +518,9 @@ button {
     height: auto;
     padding: 20px 20px;
 }
-.coffee_box:hover {
+/* .coffee_box:hover {
     background-color: #f01c1c;
-}
+}.  */
 
 .types_text {
     width: 100%;
@@ -589,6 +561,7 @@ button {
 }
 
 .read_bt a:hover {
+    background-color: #f01c1c;
     color: #fefefd;
     border: 1px solid #fefefd;
 }
