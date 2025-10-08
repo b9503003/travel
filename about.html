@@ -14,13 +14,73 @@
       <!-- Responsive-->
       <link rel="stylesheet" href="css/responsive.css">
 
-
-      <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-       <!-- font css -->
+       <!-- font css  -->
      <link rel="stylesheet" href="css/font-awesome.min.css"> 
-  <!--     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">. -->
-   </head>
+
+    <!-- Font Awesome CDN  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"> -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Microsoft JhengHei', sans-serif;
+        }
+        .card {
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+            border: none;
+            margin-bottom: 20px;
+        }
+        .card-header {
+            background-color: #fff;
+            border-bottom: 1px solid #e3e6f0;
+            font-weight: 600;
+        }
+        .stat-card {
+            border-left: 4px solid;
+        }
+        .stat-card.visitors {
+            border-left-color: #4e73df;
+        }
+        .stat-card.pageviews {
+            border-left-color: #1cc88a;
+        }
+        .stat-card.bounce-rate {
+            border-left-color: #36b9cc;
+        }
+        .stat-card.avg-time {
+            border-left-color: #f6c23e;
+        }
+        .stat-icon {
+            font-size: 1.5rem;
+            opacity: 0.7;
+        }
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .stat-text {
+            font-size: 0.8rem;
+            color: #858796;
+        }
+        .chart-container {
+            position: relative;
+            height: 300px;
+        }
+        .table th {
+            border-top: none;
+            font-weight: 600;
+            color: #6e707e;
+        }
+        .table td {
+            color: #858796;
+        }
+        .page-title {
+            color: #5a5c69;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+    </style>  
+
+</head>
    <body>
       <div class="header_section header_bg" > 
          <div class="container">
@@ -80,7 +140,6 @@
 無論是苦中帶甜，還是甜中有一點點的酸澀，我們都要學會咽下去，學會面對不開心的日子，失敗的挫折，痛苦的記憶，讓自己堅強，學會獨自面對。<br>
 歡迎你來，我們一起悠悠品著咖啡的濃香，感悟著咖啡心情，如一杯咖啡的人生一樣。
 </p>
-                        <div class="readmore_btn"><a href="#">詳細內容</a></div>
                      </div>
                   </div>
                   <div class="col-md-6"> 
@@ -91,6 +150,11 @@
          </div>
       </div>
       <!-- about section end -->
+       
+      <!-- services section start -->
+    <div id="root"></div>
+
+
 
       <!-- footer section start -->
       <div class="footer_section layout_padding  margin_top90">
@@ -147,8 +211,356 @@
       <!-- sidebar -->
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+
+    <!-- React & ReactDOM CDN -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    
+    <!-- Babel for JSX transformation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
    
-<script src="https://static.app/js/static.js" type="text/javascript"></script>
-</body>
+    <script type="text/babel">
+        // 主要組件
+        function VisitorStats() {
+            // 狀態管理
+            const [timeRange, setTimeRange] = React.useState('week');
+            const [statsData, setStatsData] = React.useState({
+                totalVisitors: 12405,
+                totalPageviews: 34210,
+                bounceRate: 42.5,
+                avgTimeOnSite: '3分25秒'
+            });
+            
+            // 圖表數據
+            const [chartData, setChartData] = React.useState({
+                labels: ['週一', '週二', '週三', '週四', '週五', '週六', '週日'],
+                datasets: [
+                    {
+                        label: '訪客數',
+                        data: [1200, 1900, 1500, 2100, 1800, 2500, 2200],
+                        backgroundColor: 'rgba(78, 115, 223, 0.1)',
+                        borderColor: 'rgba(78, 115, 223, 1)',
+                        borderWidth: 2,
+                        pointBackgroundColor: 'rgba(78, 115, 223, 1)',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointRadius: 4,
+                        pointHoverRadius: 6
+                    },
+                    {
+                        label: '瀏覽量',
+                        data: [3000, 4200, 3500, 4800, 4000, 5200, 4500],
+                        backgroundColor: 'rgba(28, 200, 138, 0.1)',
+                        borderColor: 'rgba(28, 200, 138, 1)',
+                        borderWidth: 2,
+                        pointBackgroundColor: 'rgba(28, 200, 138, 1)',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointRadius: 4,
+                        pointHoverRadius: 6
+                    }
+                ]
+            });
+            
+            // 頁面訪問數據
+            const [pageData, setPageData] = React.useState([
+                { page: '/首頁', visitors: 4200, pageviews: 8500, bounceRate: '35%', avgTime: '2分15秒' },
+                { page: '/品味咖啡', visitors: 3200, pageviews: 5200, bounceRate: '42%', avgTime: '3分40秒' },
+                { page: '/關於我們', visitors: 1800, pageviews: 2800, bounceRate: '38%', avgTime: '1分50秒' },
+                { page: '/聯繫我們', visitors: 1500, pageviews: 2200, bounceRate: '45%', avgTime: '1分20秒' },
+                { page: '/體驗活動', visitors: 2800, pageviews: 4500, bounceRate: '32%', avgTime: '4分10秒' }
+            ]);
+            
+            // 來源數據
+            const [sourceData, setSourceData] = React.useState([
+                { source: '直接訪問', visitors: 5200, percentage: 42 },
+                { source: '搜尋引擎', visitors: 4200, percentage: 34 },
+                { source: '社交媒體', visitors: 1800, percentage: 15 },
+                { source: '推薦連結', visitors: 1200, percentage: 10 }
+            ]);
+            
+            // 處理時間範圍變化
+            const handleTimeRangeChange = (range) => {
+                setTimeRange(range);
+                // 這裡可以根據實際需求更新數據
+            };
+            
+            // 渲染統計卡片
+            const renderStatCards = () => (
+                <div className="row">
+                    <div className="col-xl-3 col-md-6 mb-4">
+                        <div className="card stat-card visitors h-100">
+                            <div className="card-body">
+                                <div className="row no-gutters align-items-center">
+                                    <div className="col mr-2">
+                                        <div className="stat-text text-uppercase mb-1">總訪客數</div>
+                                        <div className="stat-number text-gray-800">{statsData.totalVisitors.toLocaleString()}</div>
+                                        <div className="text-xs font-weight-bold text-success d-inline-flex align-items-center">
+                                            <i className="fa fa-caret-up mr-1"></i>
+                                            12%
+                                        </div>
+                                        <span className="text-muted ml-2">較上週</span>
+                                    </div>
+                                    <div className="col-auto">
+                                        <i className="fa fa-users stat-icon text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className="col-xl-3 col-md-6 mb-4">
+                        <div className="card stat-card pageviews h-100">
+                            <div className="card-body">
+                                <div className="row no-gutters align-items-center">
+                                    <div className="col mr-2">
+                                        <div className="stat-text text-uppercase mb-1">總瀏覽量</div>
+                                        <div className="stat-number text-gray-800">{statsData.totalPageviews.toLocaleString()}</div>
+                                        <div className="text-xs font-weight-bold text-success d-inline-flex align-items-center">
+                                            <i className="fa fa-caret-up mr-1"></i>
+                                            8%
+                                        </div>
+                                        <span className="text-muted ml-2">較上週</span>
+                                    </div>
+                                    <div className="col-auto">
+                                        <i className="fa fa-eye stat-icon text-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className="col-xl-3 col-md-6 mb-4">
+                        <div className="card stat-card bounce-rate h-100">
+                            <div className="card-body">
+                                <div className="row no-gutters align-items-center">
+                                    <div className="col mr-2">
+                                        <div className="stat-text text-uppercase mb-1">跳出率</div>
+                                        <div className="stat-number text-gray-800">{statsData.bounceRate}%</div>
+                                        <div className="text-xs font-weight-bold text-danger d-inline-flex align-items-center">
+                                            <i className="fa fa-caret-down mr-1"></i>
+                                            3%
+                                        </div>
+                                        <span className="text-muted ml-2">較上週</span>
+                                    </div>
+                                    <div className="col-auto">
+                                     <i class="fa fa-sign-out stat-icon text-info" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className="col-xl-3 col-md-6 mb-4">
+                        <div className="card stat-card avg-time h-100">
+                            <div className="card-body">
+                                <div className="row no-gutters align-items-center">
+                                    <div className="col mr-2">
+                                        <div className="stat-text text-uppercase mb-1">平均停留時間</div>
+                                        <div className="stat-number text-gray-800">{statsData.avgTimeOnSite}</div>
+                                        <div className="text-xs font-weight-bold text-success d-inline-flex align-items-center">
+                                            <i className="fa fa-caret-up mr-1"></i>
+                                            5%
+                                        </div>
+                                        <span className="text-muted ml-2">較上週</span>
+                                    </div>
+                                    <div className="col-auto">
+                                        <i className="fa fa-clock-o stat-icon text-warning" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+            
+            // 渲染圖表
+            const renderCharts = () => (
+                <div className="row">
+                    <div className="col-xl-8 col-lg-7">
+                        <div className="card shadow mb-4">
+                            <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 className="m-0 font-weight-bold text-primary">訪客趨勢</h6>
+ 
+                            </div>
+                            <div className="card-body">
+                                <div className="chart-container">
+                                    <LineChart data={chartData} />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className="col-xl-4 col-lg-5">
+                        <div className="card shadow mb-4">
+                            <div className="card-header py-3">
+                                <h6 className="m-0 font-weight-bold text-primary">訪客來源</h6>
+                            </div>
+                            <div className="card-body">
+                                <div className="chart-container">
+                                    <DoughnutChart data={sourceData} />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+            
+            // 渲染頁面訪問表格
+            const renderPageTable = () => (
+                <div className="card shadow mb-4">
+                    <div className="card-header py-3">
+                        <h6 className="m-0 font-weight-bold text-primary">頁面訪問統計</h6>
+                    </div>
+                    <div className="card-body">
+                        <div className="table-responsive">
+                            <table className="table table-bordered" width="100%" cellSpacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>頁面</th>
+                                        <th>訪客數</th>
+                                        <th>瀏覽量</th>
+                                        <th>跳出率</th>
+                                        <th>平均停留時間</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {pageData.map((page, index) => (
+                                        <tr key={index}>
+                                            <td>{page.page}</td>
+                                            <td>{page.visitors.toLocaleString()}</td>
+                                            <td>{page.pageviews.toLocaleString()}</td>
+                                            <td>{page.bounceRate}</td>
+                                            <td>{page.avgTime}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            );
+            
+            return (
+
+         <div class="container">
+            <div class="about_section_2">
+               <div class="row"> 
+                  <div class="col-md-6"> 
+                     <div class="about_taital_box">
+                        <h1 class="about_taital">網站訪客統計</h1>
+                     </div>
+                  </div>
+               </div>
+            </div>   
+
+                    
+                    {renderStatCards()}
+                    {renderCharts()}
+                    {renderPageTable()}
+                </div>
+            );
+        }
+        
+        // 折線圖組件
+        function LineChart({ data }) {
+            const chartRef = React.useRef(null);
+            
+            React.useEffect(() => {
+                if (chartRef.current) {
+                    const ctx = chartRef.current.getContext('2d');
+                    new Chart(ctx, {
+                        type: 'line',
+                        data: data,
+                        options: {
+                            maintainAspectRatio: false,
+                            scales: {
+                                xAxes: [{
+                                    gridLines: {
+                                        display: false
+                                    }
+                                }],
+                                yAxes: [{
+                                    ticks: {
+                                        beginAtZero: true
+                                    },
+                                    gridLines: {
+                                        color: 'rgba(0, 0, 0, 0.05)'
+                                    }
+                                }]
+                            },
+                            legend: {
+                                display: true,
+                                position: 'bottom'
+                            }
+                        }
+                    });
+                }
+            }, [data]);
+            
+            return <canvas ref={chartRef}></canvas>;
+        }
+        
+        // 圓餅圖組件
+        function DoughnutChart({ data }) {
+            const chartRef = React.useRef(null);
+            
+            React.useEffect(() => {
+                if (chartRef.current) {
+                    const ctx = chartRef.current.getContext('2d');
+                    
+                    const chartData = {
+                        labels: data.map(item => item.source),
+                        datasets: [{
+                            data: data.map(item => item.percentage),
+                            backgroundColor: [
+                                'rgba(78, 115, 223, 0.8)',
+                                'rgba(28, 200, 138, 0.8)',
+                                'rgba(54, 185, 204, 0.8)',
+                                'rgba(246, 194, 62, 0.8)'
+                            ],
+                            borderWidth: 0
+                        }]
+                    };
+                    
+                    new Chart(ctx, {
+                        type: 'doughnut',
+                        data: chartData,
+                        options: {
+                            maintainAspectRatio: false,
+                            cutoutPercentage: 70,
+                            legend: {
+                                display: true,
+                                position: 'bottom'
+                            },
+                            tooltips: {
+                                callbacks: {
+                                    label: function(tooltipItem, data) {
+                                        const dataset = data.datasets[tooltipItem.datasetIndex];
+                                        const currentValue = dataset.data[tooltipItem.index];
+                                        const label = data.labels[tooltipItem.index];
+                                        return `${label}: ${currentValue}%`;
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+            }, [data]);
+            
+            return <canvas ref={chartRef}></canvas>;
+        }
+        
+        // 渲染應用
+        ReactDOM.render(<VisitorStats />, document.getElementById('root'));
+    </script>
+
+   
+   </body>
 
 </html>
+
+
+
