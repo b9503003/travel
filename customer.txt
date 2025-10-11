@@ -1,0 +1,23 @@
+[
+{
+"name": "Tm65478931",
+"photo": "client-img4.jpg",
+"comment": "咖啡款式多元化，首要推介手沖hand drip 咖啡，因為舖頭老闆是咖啡師的老師，對不同咖啡豆的屬性十分掌握，加上他自己炒豆，小批次地炒製，能長期保持高水準 。"
+},
+{
+"name": "Willow Yellow",
+"photo": "client-img5.jpg",
+"comment": "佢哋嘅咖啡唔錯之餘，仲有roobois tea，唔想飲咖啡嘅朋友可以考慮下。配埋件lemon loaf，真係非常合襯，蛋糕味道亦唔會太甜，幾清新。"
+},
+{
+"name": "JESIMIN",
+"photo": "client-img6.jpg",
+"comment": "小店座位不多，但咖啡種類有很多選擇，就算對咖啡的認識不多，員工也會主動介紹。"
+},
+{
+"name": "judychu123456",
+"photo": "client-img8.jpg",
+"comment": "喺公司附近開掘緊啲好食嘅餐廳最近鍾意飲咖啡喺Google Maps search嗰間有嘢食同咖啡嘅地方門口同入邊都好靚環境10分清潔沖咖啡10分專業。"
+}
+
+]
