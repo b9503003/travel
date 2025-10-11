@@ -1,5 +1,71 @@
 <!DOCTYPE html>
 <html>
+       <style>
+         .error {
+            color: #ff0000;
+            font-size: 14px;
+            margin-top: -15px;
+            margin-bottom: 15px;
+            display: none;
+        }
+        
+        /* 弹窗样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .modal h2 {
+            color: #8B4513;
+            margin-bottom: 15px;
+        }
+        
+        .modal p {
+            margin-bottom: 20px;
+        }
+        
+        .modal button {
+            padding: 10px 25px;
+            background-color: #8B4513;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .modal button:hover {
+            background-color: #654321;
+        }
+        
+        @media (max-width: 768px) {
+            .contact_taital {
+                font-size: 28px;
+            }
+            
+            .mail_text, .massage-bt {
+                font-size: 14px;
+            }
+        }
+    </style>
    <head>
       <!-- basic -->
     <meta charset="UTF-8">
@@ -90,6 +156,9 @@
                         <h4 class="date_text">12 OCT 2025</h4>
                         <h4 class="prep_text">  顧客體驗活動：藍莓咖啡瑪芬</h4>
                         <p class="lorem_text">  藍莓和咖啡perfect match!搭配和諧。濃郁香醇的咖啡牛奶做基底，藍莓瑪芬風味獨特迷人。</p>
+                        <p> 活動日期：10月12日（日）下午2：30-4:00</p>
+                        <p> 活動地點：豆．你玩咖啡館</p>
+                        <p> 費用：$200（另，材料費：$50） </p>
                         <p>  食材： 
                           鬆餅粉 150 克<br>
                           雞蛋 1 個<br>
@@ -111,6 +180,10 @@
                            在咖啡製作的基本技能中，拉花無疑是最讓人又愛又恨的體驗。拉花講求手眼心合一，投入與專注是成功創造完美圖案的關鍵。<br><br>
                            美麗的圖案襯托出咖啡的濃郁香氣，但即使是最簡單的心形圖案，也需要大量的練習才能掌握。<br><br>
                            不過，有專業的導師教授技巧，可以讓您事半功倍，輕鬆達成理想的效果！ </p>
+                           
+                           <p> 活動日期：10月26日（日）下午2：30-4:00</p>
+                           <p> 活動地點：豆．你玩咖啡館</p>
+                           <p> 費用：$200 </p>
                         
 
 
@@ -132,56 +205,63 @@
                </div>
             </div>
          </div>
-         <div class="container-fluid">
+        <div class="container-fluid">
             <div class="contact_section_2">
-               <div class="row">
-                  <div class="col-md-12">
-                     <div class="mail_section_1">
-                        <input type="text" class="mail_text" placeholder="姓名" name="Your Name">
-                        <input type="text" class="mail_text" placeholder="電郵地址" name="Your Email">
-                        <input type="text" class="mail_text" placeholder="聯絡號碼" name="Your Phone">
-              <div>
-                <select class="mail_text" name="persons">
-                  <option value="" disabled selected>
-                    人數
-                  </option>
-                  <option value="">
-                    2
-                  </option>
-                  <option value="">
-                    3
-                  </option>
-                  <option value="">
-                    4
-                  </option>
-                  <option value="">
-                    5
-                  </option>
-                </select>
-              </div>
-              <div>
-                <select class="mail_text" name="persons">
-                  <option value="" disabled selected>
-                    活動日期
-                  </option>
-                  <option value="">
-                    12/10/2025
-                  </option>
-                  <option value="">
-                    26/10/2025
-                  </option>
-
-                </select>
-              </div>
-                        <textarea class="massage-bt" placeholder="留言" rows="5" id="comment" name="Massage"></textarea>
-                        <div class="send_bt"><a href="#">傳送</a></div>
-                     </div>
-                  </div>
-               </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <form id="registrationForm" class="mail_section_1">
+                            <input type="text" class="mail_text" placeholder="姓名" name="name" id="name">
+                            <div class="error" id="nameError">請輸入有效的姓名</div>
+                            
+                            <input type="text" class="mail_text" placeholder="電郵地址" name="email" id="email">
+                            <div class="error" id="emailError">請輸入有效的電郵地址</div>
+                            
+                            <input type="text" class="mail_text" placeholder="聯絡號碼" name="phone" id="phone">
+                            <div class="error" id="phoneError">請輸入有效的聯絡號碼</div>
+                            
+                            <div>
+                                <select class="mail_text" name="persons" id="persons">
+                                    <option value="" disabled selected>人數</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                                <div class="error" id="personsError">請選擇人數</div>
+                            </div>
+                            
+                            <div>
+                                <select class="mail_text" name="eventDate" id="eventDate">
+                                    <option value="" disabled selected>活動日期</option>
+                                    <option value="12/10/2025">12/10/2025</option>
+                                    <option value="26/10/2025">26/10/2025</option>
+                                </select>
+                                <div class="error" id="dateError">請選擇活動日期</div>
+                            </div>
+                            
+                            <textarea class="massage-bt" placeholder="留言" rows="5" id="message" name="message"></textarea>
+                            
+                            <div class="send_bt">
+                                <a href="#" id="submitBtn">傳送</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
+        </div>
+
       <!-- contact section end -->
+
+          <!-- 成功弹窗 -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <h2>報名成功！</h2>
+            <p>感謝您的報名，我們已收到您的資料。</p>
+            <p>我們將在活動前透過電郵與您確認。</p>
+            <button id="closeModal">確定</button>
+        </div>
+    </div>
+
 
 
       <!-- footer section start -->
@@ -239,8 +319,111 @@
       <!-- sidebar -->
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 
-   
-<script src="https://static.app/js/static.js" type="text/javascript"></script>
-</body>
+      <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('registrationForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const successModal = document.getElementById('successModal');
+            const closeModal = document.getElementById('closeModal');
+            
+            // 验证函数
+            function validateForm() {
+                let isValid = true;
+                
+                // 验证姓名
+                const name = document.getElementById('name').value.trim();
+                const nameError = document.getElementById('nameError');
+                if (name === '' || name.length < 2) {
+                    nameError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    nameError.style.display = 'none';
+                }
+                
+                // 验证电邮
+                const email = document.getElementById('email').value.trim();
+                const emailError = document.getElementById('emailError');
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    emailError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    emailError.style.display = 'none';
+                }
+                
+                // 验证电话号码
+                const phone = document.getElementById('phone').value.trim();
+                const phoneError = document.getElementById('phoneError');
+                const phoneRegex = /^[0-9]{8,15}$/;
+                if (!phoneRegex.test(phone)) {
+                    phoneError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    phoneError.style.display = 'none';
+                }
+                
+                // 验证人数
+                const persons = document.getElementById('persons').value;
+                const personsError = document.getElementById('personsError');
+                if (persons === '') {
+                    personsError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    personsError.style.display = 'none';
+                }
+                
+                // 验证活动日期
+                const eventDate = document.getElementById('eventDate').value;
+                const dateError = document.getElementById('dateError');
+                if (eventDate === '') {
+                    dateError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    dateError.style.display = 'none';
+                }
+                
+                return isValid;
+            }
+            
+            // 提交表单
+            submitBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if (validateForm()) {
+                    // 显示成功弹窗
+                    successModal.style.display = 'flex';
+                    
+                    // 这里可以添加表单提交的代码，例如AJAX请求
+                    // 例如: 
+                    // const formData = new FormData(form);
+                    // fetch('/submit-form', { method: 'POST', body: formData })
+                    //   .then(response => response.json())
+                    //   .then(data => console.log(data))
+                    //   .catch(error => console.error('Error:', error));
+                }
+            });
+            
+            // 关闭弹窗
+            closeModal.addEventListener('click', function() {
+                successModal.style.display = 'none';
+                // 可选：重置表单
+                form.reset();
+            });
+            
+            // 点击弹窗外部关闭
+            window.addEventListener('click', function(e) {
+                if (e.target === successModal) {
+                    successModal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+
+   </body>
 
 </html>
+
+
+
